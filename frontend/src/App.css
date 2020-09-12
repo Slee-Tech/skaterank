@@ -1,0 +1,22 @@
+@import "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css";
+
+.like-btn {
+    color: green;
+    cursor: pointer;
+}
+
+.like-btn:hover {
+    color: rgb(9, 177, 9);
+    transform: scale(1.2);
+}
+
+.dislike-btn {
+    color: red;
+    cursor: pointer;
+}
+
+.dislike-btn:hover {
+    color: rgb(255, 46, 46);
+    transform: scale(1.2);
+}
