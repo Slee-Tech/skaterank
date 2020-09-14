@@ -13,7 +13,7 @@ export default function SkaterList() {
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">ID</th>
+                        <th scope="col">Rank</th>
                         <th scope="col">Name</th>
                         <th scope="col">Likes</th>
                         <th scope="col">Dislikes</th>

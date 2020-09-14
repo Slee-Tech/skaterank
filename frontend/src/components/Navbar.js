@@ -16,7 +16,7 @@ export default function NavbarWrapper() {
     // add some kind of sorting function to the list of skaters, to sort by most likes/dislikes/etc.
     return (
         <Navbar bg="light" expand="lg">
-            <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+            <Navbar.Brand href="#home">SkateRank</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto"></Nav>

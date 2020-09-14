@@ -28,7 +28,7 @@ SECRET_KEY = '!_%=!n)&x$ni_b#ftiql#rh$kwmnjmm4iddbon7fv!!s9+cdm*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['157.245.254.184', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -145,4 +145,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+STATIC_ROOT='/static/'
 STATIC_URL = '/static/'
+
+REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend')
+STATICFILES_DIRS = [os.path.join(REACT_APP_DIR, 'build', 'static'),]
