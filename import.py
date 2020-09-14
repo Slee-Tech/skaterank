@@ -24,7 +24,7 @@ with open('skateboarders.txt', 'r') as s:
     new_skater = Skateboard(name=skater, likes=0, dislikes=0, total=0)
     new_skater.save()
     
-    while line:
+    while skater_line:
         skater_line = s.readline()
         skater = skater_line.strip('VM3431:1 ').rstrip('\n')
         print(f'Creating instance: {skater}')
