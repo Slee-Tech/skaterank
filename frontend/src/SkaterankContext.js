@@ -44,8 +44,11 @@ export default function SkaterankContextProvider(props) {
     const [query, setQuery] = useState(""); // used in search input
     const [totalVotes, setTotalVotes] = useState(0);
     const [sortBy, setSortBy] = useState("likes");
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
+        setIsLoading(true);
+        console.log("loading...");
         fetch(process.env.REACT_APP_API_URL) //process.env.REACT_APP_API_UR
             .then((res) => {
                 return res.json();
@@ -54,6 +57,8 @@ export default function SkaterankContextProvider(props) {
                 console.log(data);
                 setSkaters(data);
                 setFilteredSkaters(data);
+                setIsLoading(false);
+                console.log("loaded...");
             });
     }, []); // used to fetch initial skaters
     // maybe add a first useEffect here, to fetch all skaters on load, and call this only if skaters change
@@ -176,6 +181,7 @@ export default function SkaterankContextProvider(props) {
                 setSortBy,
                 query,
                 setQuery,
+                isLoading,
             }}
         >
             {props.children}
