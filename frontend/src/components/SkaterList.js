@@ -15,23 +15,25 @@ export default function SkaterList() {
 
     return (
         <div>
-            <table className="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Rank</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Likes</th>
-                        <th scope="col">Dislikes</th>
-                        <th scope="col">Total</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {isLoading ? (
-                        <Spinner animation="border" role="status">
-                            <span className="sr-only">Loading...</span>
-                        </Spinner>
-                    ) : (
-                        filteredSkaters.map((skater, index) => {
+            {isLoading ? (
+                <div className="d-flex justify-content-center pt-5">
+                    <Spinner animation="grow" variant="primary" role="status">
+                        <span className="sr-only">Loading...</span>
+                    </Spinner>
+                </div>
+            ) : (
+                <table className="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Rank</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Likes</th>
+                            <th scope="col">Dislikes</th>
+                            <th scope="col">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {filteredSkaters.map((skater, index) => {
                             return (
                                 <Skater
                                     skater={skater}
@@ -41,10 +43,10 @@ export default function SkaterList() {
                                     rank={index + 1}
                                 />
                             );
-                        })
-                    )}
-                </tbody>
-            </table>
+                        })}
+                    </tbody>
+                </table>
+            )}
         </div>
     );
 }

@@ -54,7 +54,6 @@ export default function SkaterankContextProvider(props) {
                 return res.json();
             })
             .then((data) => {
-                console.log(data);
                 setSkaters(data);
                 setFilteredSkaters(data);
                 setIsLoading(false);
@@ -72,7 +71,7 @@ export default function SkaterankContextProvider(props) {
             const queriedSkaters = filteredSkaters.filter((skater) =>
                 skater.name.toLowerCase().includes(query)
             ); // does not mutate original skaters array
-            console.log(queriedSkaters);
+            //console.log(queriedSkaters);
             //setFilteredSkaters(queriedSkaters);
             return queriedSkaters;
         } else {
@@ -133,7 +132,7 @@ export default function SkaterankContextProvider(props) {
                 return res.json();
             })
             .then((data) => {
-                console.log(data);
+                return;
             });
     };
 
@@ -166,7 +165,7 @@ export default function SkaterankContextProvider(props) {
                 return res.json();
             })
             .then((data) => {
-                console.log(data);
+                return;
             });
     };
 
