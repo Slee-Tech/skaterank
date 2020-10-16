@@ -169,6 +169,37 @@ export default function SkaterankContextProvider(props) {
             });
     };
 
+    const setStance = (skaterID, stance) => {
+        const newSkaters = filteredSkaters.map((skater) => {
+            if (skater.id !== skaterID) {
+                // This isn't the item we care about - keep it as-is
+                return skater;
+            }
+            // Otherwise, this is the one we want - return an updated value
+            skater.stance = stance
+            return {
+                ...skater,
+            };
+        });
+        setFilteredSkaters(newSkaters);
+        fetch(`${process.env.REACT_APP_API_URL}${skaterID}/stance`, {
+            method: "PATCH",
+            body: JSON.stringify({ stance: stance }),
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+            .then((res) => {
+                return res.json();
+            })
+            .then((data) => {
+                return;
+            });
+        
+    };
+
+    
+
     return (
         <SkaterankContext.Provider
             value={{
@@ -181,6 +212,7 @@ export default function SkaterankContextProvider(props) {
                 query,
                 setQuery,
                 isLoading,
+                setStance
             }}
         >
             {props.children}

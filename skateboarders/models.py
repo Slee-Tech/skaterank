@@ -6,4 +6,5 @@ class Skateboard(models.Model):
     likes = models.IntegerField()
     dislikes = models.IntegerField()
     total = models.IntegerField()
+    stance = models.CharField(max_length=8)
 

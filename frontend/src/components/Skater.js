@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Skater(props) {
-    const { skater, like, dislike, rank } = props;
+    const { skater, like, dislike, rank, setStance } = props;
 
     const handleLike = (skaterID) => {
         props.like(skaterID);
@@ -25,6 +25,18 @@ export default function Skater(props) {
                     onClick={() => props.dislike(skater.id)}
                     class="fas dislike-btn fa-thumbs-down"
                 ></i>
+            </td>
+            <td>{skater.stance}</td>
+            <td>
+                <button className="btn btn-primary"
+                    onClick={() => setStance(skater.id, "goofy")}
+                    
+                >Goofy</button>
+                <button className="btn btn-danger"
+                    onClick={() => setStance(skater.id, "regular")}
+                    
+                >Regular</button>
+            
             </td>
         </tr>
     );

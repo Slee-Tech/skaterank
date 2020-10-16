@@ -10,6 +10,7 @@ export default function SkaterList() {
         dislike,
         sortByFilter,
         isLoading,
+        setStance
     } = useContext(SkaterankContext);
     // add some kind of sorting function to the list of skaters, to sort by most likes/dislikes/etc.
 
@@ -30,6 +31,9 @@ export default function SkaterList() {
                             <th scope="col">Likes</th>
                             <th scope="col">Dislikes</th>
                             <th scope="col">Total</th>
+                            <th scope="col">Like</th>
+                            <th scope="col">Dislike</th>
+                            <th scope="col">Stance</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -41,6 +45,7 @@ export default function SkaterList() {
                                     dislike={dislike}
                                     sortByFilter={sortByFilter}
                                     rank={index + 1}
+                                    setStance={setStance}
                                 />
                             );
                         })}

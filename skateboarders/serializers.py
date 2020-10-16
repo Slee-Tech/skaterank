@@ -5,6 +5,6 @@ class SkateboardSerializer(serializers.ModelSerializer):
     class Meta:
         model = Skateboard
         fields = (
-            'id','name', 'likes', 'dislikes', 'total'
+            'id','name', 'likes', 'dislikes', 'total', 'stance'
         )
 
