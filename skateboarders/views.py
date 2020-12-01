@@ -10,7 +10,7 @@ import json
 # Create your views here.
 class SkateboarderList(mixins.ListModelMixin, generics.GenericAPIView):
     serializer_class = SkateboardSerializer
-    queryset = Skateboard.objects.all()
+    queryset = Skateboard.objects.all().order_by('name')
 
     def get(self, request, *args, **kwargs):
         return self.list(self, request, *args, **kwargs)
